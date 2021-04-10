@@ -451,7 +451,7 @@ Enti.get = function(model, key){
     return model[key];
 };
 Enti.set = function(model, key, value){
-    if(!model || typeof model !== 'object'){
+    if(!model || typeof model !== 'object' || model === Object.prototype){
         return;
     }
 
@@ -483,7 +483,7 @@ Enti.set = function(model, key, value){
     emit(events);
 };
 Enti.push = function(model, key, value){
-    if(!model || typeof model !== 'object'){
+    if(!model || typeof model !== 'object' || model === Object.prototype){
         return;
     }
 
@@ -515,7 +515,7 @@ Enti.push = function(model, key, value){
     emit(events);
 };
 Enti.insert = function(model, key, value, index){
-    if(!model || typeof model !== 'object'){
+    if(!model || typeof model !== 'object' || model === Object.prototype){
         return;
     }
 
@@ -549,7 +549,7 @@ Enti.insert = function(model, key, value, index){
     emit(events);
 };
 Enti.remove = function(model, key, subKey){
-    if(!model || typeof model !== 'object'){
+    if(!model || typeof model !== 'object' || model === Object.prototype){
         return;
     }
 
@@ -575,7 +575,7 @@ Enti.remove = function(model, key, subKey){
     emit(events);
 };
 Enti.move = function(model, key, index){
-    if(!model || typeof model !== 'object'){
+    if(!model || typeof model !== 'object' || model === Object.prototype){
         return;
     }
 
@@ -601,7 +601,7 @@ Enti.move = function(model, key, index){
     emit([[model, index, item]]);
 };
 Enti.update = function(model, key, value, options){
-    if(!model || typeof model !== 'object'){
+    if(!model || typeof model !== 'object' || model === Object.prototype){
         return;
     }
 
